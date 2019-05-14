@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Indie Flower", cursive;
+}
+
+#main  {
+    border: 2px red solid;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #69779b;
+    text-align: right;
+    font-size: 70px;
+    font-weight: lighter;
+    padding: 20px;
+    padding-right: 40px;
+}
+
+#imgheader {
+    height: 100px;
+    width: 100px;
+}
+
+form {
+    padding: 20px;
+    background-color: #9692af;
+}
+
+h2 {
+    background-color: #acdbdf;
+    font-size: 50px;
+    padding-left: 20px;
+}
+
+input {
+    height: 40px;
+    width: 300px;
+    font-size: 30px;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.images {
+    margin: 20px;
+    height: 400px;
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.description {
+    width: 330px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4c8492;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.image {
+    height: 330px;
+    width: 330px;
+}
+
+.imageBoard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background-color: #d7eaea;
+}
+
+/* -------------------------- modal -------------------------*/
+
+.back {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 750px;
+    width: 100%;
+    z-index: 10000000000000000000000000000;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+.first {
+    height: 650px;
+    width: 900px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    height: 420px;
+    width: 430px;
+    z-index: 400;
+}
+
+.timestampcomp {
+    font-size: 20px;
+    color: gray;
+}
+
+.commentarfields {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.close-button {
+    border: 2px black solid;
+    width: 40px;
+    margin: 10px;
+}
+
+.comments {
+    margin: 10px;
+    padding: 10px;
+    height: 300px;
+    width: 330px;
+    color: #4c8492;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.commenttitle {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.comment {
+    font-size: 20px;
+}
+
+.timestampcomment {
+    font-size: 20px;
+}
+/*------------    MORE    ---------------*/
+
+#more {
+    margin-top: 10px;
+    background-color: #69779b;
+    border: 5px silver solid;
+    border-radius: 30px;
+    height: 60px;
+    width: 100%;
+    font-size: 40px;
+    font-weight: bolder;
+}

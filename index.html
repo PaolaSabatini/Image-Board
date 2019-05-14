@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <title>Image Board</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <img id="imgheader" src="camera.jpg" alt="camera">
+            <p>Image Board</p>
+        </div>
+            <form>
+                <input v-model='form.title' type="text" name="title" placeholder="title" value="">
+                <input v-model='form.description' type="text" name="description" placeholder="description" value="">
+                <input v-model='form.username' type="text" name="username" placeholder="username" value="">
+                <input type="file" name="file" accept="image/*" value="" @change='handleFileChange'>
+                <button @click='uploadFile'>upload</button>
+            </form>
+
+        <h2>Pictures:</h2>
+            <div class="imageBoard">
+                <div class="images" v-if="images.length" :key='image.id' v-for="image in images" >
+                <a :href="'#' + image.id">
+                    <img class='image' :src="image.url" :alt='image.title' @click="showModal = true">
+                </a>
+                    <p class="description">{{image.description}}</p>
+                </div>
+            </div>
+
+        <box v-if="id" v-bind:id="id"  @close="closeModal"></box>
+        <button @click="getMoreImages" id='more'>MORE</button>
+    </div>
+
+
+
+    <script type="text/x-template" id="modal-template">
+        <div class="back">
+            <div class="first">
+
+                <div class="imgfield">
+                    <img class='img' :src="images.url" :alt="images.title">
+                    <p class="title">{{images.title}}</p>
+                    <p class="descriptioncomp">{{images.description}}</p>
+                    <p class="timestampcomp">Created by {{images.username}} on {{images.created_at}}</p>
+                </div>
+                <div class="commentarfields">
+                    <button class="close-button" @click="close">
+                   X
+                    </button>
+                    <input v-model="comment.comment" type="text" placeholder="comment" name="comment" value="">
+                    <input v-model="comment.username" type="text" placeholder="username" name="username" value="">
+                    <button @click="insertcomments">OK</button>
+                    <div class="comments" v-if="comments.length" :key="comment.id" v-for="comment in comments">
+                        <p class="commenttitle">Comment:</p>
+                        <p class="comment">{{comment.comment}}</p>
+                        <p class="commenttitle">User:</p>
+                        <p class="timestampcomment">{{comment.username}} on {{comment.created_at}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+
+
+
+
+    <script src="/js/s3.js"></script>
+    <script src="/js/vue.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/script.js" charset="utf-8"></script>
+</body>
+</html>
